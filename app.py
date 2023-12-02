@@ -23,7 +23,7 @@ def web_app():
         # Make a prediction when the user clicks the button
         if st.button("Make Prediction"):
             # Load the image
-            image = cv2.imread("/Users/sandy/Downloads/1-11.png")
+            image = cv2.imread("s3://pedestrianfriendlyproject/Location/1-11.png")
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # If using OpenCV, convert BGR to RGB
             actual_rating = 5.0
             # Resize the image to match the input size of your model
