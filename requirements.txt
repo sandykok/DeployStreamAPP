@@ -4,4 +4,4 @@ joblib
 pandas
 opencv-python
 numpy
-
+s3fs
