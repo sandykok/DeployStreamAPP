@@ -1,3 +1,7 @@
 ### dependency
 streamlit
+joblib
+pandas
+cv2
+numpy
 
