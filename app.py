@@ -12,8 +12,18 @@ import numpy as np
 #filename = "s3://pedestrianfriendlyproject/model1.joblib>"
 #with fs.open(filename, encoding='utf8') as fh:
 #    model = joblib.load(fh)
- 
-model = joblib.load('https://s3.console.aws.amazon.com/s3/object/pedestrianfriendlyproject/model1.joblib')
+# Specify your S3 bucket and file paths
+s3 = boto3.resource('s3')
+bucket_name = 'pedestrianfriendlyproject'
+location_folder_key = 'Location/'
+
+# Specify the local folder path to download the images
+local_folder_path = 's3://pedestrianfriendlyproject/model1.joblib'  # Update this with your local folder path
+
+# Ensure the local folder exists
+os.makedirs(local_folder_path, exist_ok=True)
+
+model = joblib.load(local_folder_path)
 img_size = (224, 224)
  
 def web_app():
