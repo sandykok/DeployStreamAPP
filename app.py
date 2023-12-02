@@ -21,7 +21,7 @@ bucket_name = 'pedestrianfriendlyproject'
 location_folder_key = 'Location/'
 
 # Specify the local folder path to download the images
-local_folder_path = 's3://pedestrianfriendlyproject/model1.joblib'  # Update this with your local folder path
+local_folder_path = 's3://pedestrianfriendlyproject/MLModels/model1.joblib'  # Update this with your local folder path
 
 # Ensure the local folder exists
 os.makedirs(local_folder_path, exist_ok=True)
