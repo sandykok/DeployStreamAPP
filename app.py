@@ -27,7 +27,7 @@ location_folder_key = 'Location/'
 key = 'model1.joblib'
 
 # Download the joblib model to a local file
-with open('my-model.joblib', 'wb') as f:
+with open('model1.joblib', 'wb') as f:
     s3.Object(bucket, key).download_fileobj(f)
 
 # Load the joblib model
