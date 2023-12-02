@@ -4,9 +4,10 @@ import streamlit as st
 from numpy import outer
 import cv2
 import numpy as np
-
+#import s3fs
+#fs = s3fs.S3FileSystem() # Updated method name
  
-model = joblib.load('/Users/sandy/Documents/EDS/Cloud_Computing/Project_files/model1.joblib')
+model = joblib.load('s3://pedestrianfriendlyproject/model1.joblib')
 img_size = (224, 224)
  
 def web_app():
