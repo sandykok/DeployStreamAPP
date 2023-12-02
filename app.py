@@ -26,7 +26,7 @@ local_folder_path = 's3://pedestrianfriendlyproject/MLModels/'  # Update this wi
 # Ensure the local folder exists
 os.makedirs(local_folder_path, exist_ok=True)
 
-model = joblib.load(local_folder_path+'model1.joblib')
+model = joblib.load('s3://pedestrianfriendlyproject/MLModels/model1.joblib')
 img_size = (224, 224)
  
 def web_app():
