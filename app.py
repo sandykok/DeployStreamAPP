@@ -15,18 +15,26 @@ import os
 #filename = "s3://pedestrianfriendlyproject/model1.joblib>"
 #with fs.open(filename, encoding='utf8') as fh:
 #    model = joblib.load(fh)
+
+
+
 # Specify your S3 bucket and file paths
 s3 = boto3.resource('s3')
-bucket_name = 'pedestrianfriendlyproject'
+bucket = 'pedestrianfriendlyproject'
 location_folder_key = 'Location/'
+key = 'model1.joblib'
+
+# Download the joblib model to a local file
+with open('my-model.joblib', 'wb') as f:
+    s3.Object(bucket, key).download_fileobj(f)
+
+# Load the joblib model
+model = joblib.load('model1.joblib')
 
 # Specify the local folder path to download the images
-local_folder_path = 's3://pedestrianfriendlyproject/MLModels/'  # Update this with your local folder path
+#local_folder_path = 's3://pedestrianfriendlyproject/MLModels/'  # Update this with your local folder path
 
-# Ensure the local folder exists
-os.makedirs(local_folder_path, exist_ok=True)
-
-model = joblib.load('https://pedestrianfriendlyproject.s3.us-east-2.amazonaws.com/MLModels/model1.joblib')
+#model = joblib.load('https://pedestrianfriendlyproject.s3.us-east-2.amazonaws.com/MLModels/model1.joblib')
 img_size = (224, 224)
  
 def web_app():
