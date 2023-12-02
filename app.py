@@ -19,7 +19,9 @@ import os
 
 
 # Specify your S3 bucket and file paths
-s3 = boto3.resource('s3')
+s3 = boto3.resource('s3',
+         aws_access_key_id='AKIAWG2QDUGLC2VCFZZ2',
+         aws_secret_access_key= 'dd6AyojKv+ZiNE/4SFTdD8BPTbYsH0xbEUVkFsvX'
 bucket = 'pedestrianfriendlyproject'
 location_folder_key = 'Location/'
 key = 'model1.joblib'
